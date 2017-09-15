@@ -37,33 +37,16 @@ def flashlights():
 
     yellowfast = {'transitiontime' : 1, 'on' : True, 'bri' : 254, 'hue' : 11308}
     bluefast = {'transitiontime' : 1, 'on' : True, 'bri' : 254, 'hue' : 46014}
-    b.set_light(1, yellowfast)
-    b.set_light(3, bluefast)
-    time.sleep(1)
-    b.set_light(3, yellowfast)
-    b.set_light(1, bluefast)
-    time.sleep(1)
-    b.set_light(1, yellowfast)
-    b.set_light(3, bluefast)
-    time.sleep(1)
-    b.set_light(3, yellowfast)
-    b.set_light(1, bluefast)
-    time.sleep(1)
-    b.set_light(1, yellowfast)
-    b.set_light(3, bluefast)
-    time.sleep(1)
-    b.set_light(3, yellowfast)
-    b.set_light(1, bluefast)
-    time.sleep(1)
-    b.set_light(1, yellowfast)
-    b.set_light(3, bluefast)
+    for x in range (0, 3):
+        b.set_light(1, yellowfast)
+        b.set_light(3, bluefast)
+        time.sleep(0.4)
+        b.set_light(3, yellowfast)
+        b.set_light(1, bluefast)
+        time.sleep(0.4)
+    
 
 
-    #b.set_light(1, 'on', True)
-    #b.set_light(1, 'bri', 0, transitiontime=1200)
-    #b.set_light(1, 'hue', 40000, transitiontime=600)
-
-    # Prints if light 1 is on or not
     print(b.get_light(3, 'hue'))
     print(b.get_light(1, 'hue'))
 
