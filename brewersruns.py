@@ -3,10 +3,6 @@ import mlbgame, requests, time, datetime
 from phue import Bridge
 from flashlights import *
 
-flashlights()
-
-
-
 outs = 0
 runs = 0
 calls = 0
@@ -40,12 +36,12 @@ while myoverview.status == 'In Progress':
     if home == 1:
         if myoverview.home_team_runs > runs:
             runs = myoverview.home_team_runs
-            flashlights()
+            flashbrewers()
             print ('RUNS RUNS RUNS RUNS RUNS RUNS RUNS RUNS')
     elif away == 1:
         if myoverview.away_team_runs > runs:
             runs = myoverview.away_team_runs
-            flashlights()
+            flashbrewers()
             print ('RUNS RUNS RUNS RUNS RUNS RUNS RUNS RUNS')
             
     #print(game.home_team_runs)
