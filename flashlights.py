@@ -3,7 +3,10 @@ import mlbgame, requests, time, datetime, sys
 
 from phue import Bridge
 
-team = sys.argv[1]
+if len(sys.argv) > 1:
+    team = sys.argv[1]
+else:
+    team = ''
 
 color1 = {'transitiontime' : 1, 'on' : False, 'bri' : 0, 'hue' : 000000}
 color2 = {'transitiontime' : 1, 'on' : False, 'bri' : 0, 'hue' : 000000}
