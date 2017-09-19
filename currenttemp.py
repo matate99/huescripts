@@ -19,6 +19,8 @@ b = Bridge('192.168.65.129')
 
 lightsr = getlights(1)
 
+#
+'''
 
 high = (high**3)*.00002+(high**2)*.0035+high*.4176-5.7344
 x = (high + 10)*.0046087 + .14 #This normalized the high for the gamut conversion
@@ -27,7 +29,8 @@ color = {'transitiontime' : 1, 'on' : True, 'bri' : 100, 'xy' : [x, y]}
 b.set_light(1, color)
 time.sleep(60)
 
-revertlights(1, lightsr)
+color1 = {'transitiontime' : 1, 'on' : True, 'bri' : 254, 'xy' : [x, y]}
+b.set_light(1, color1)
 
 
 
@@ -35,8 +38,8 @@ revertlights(1, lightsr)
 #
 '''
 
-for x in range (0, 23):
-    high = x * 5 - 10
+for x in range (0, 12):
+    high = x * 10 - 10
     print (high)
     high = (high**3)*.00002+(high**2)*.0035+high*.4176-5.7344
     x = (high + 10)*.0046087 + .14 #This normalized the high for the gamut conversion
@@ -46,11 +49,8 @@ for x in range (0, 23):
     time.sleep(4)
     
 
+revertlights(1, lightsr)
 
-color1 = {'transitiontime' : 1, 'on' : True, 'bri' : 254, 'xy' : [x, y]}
-b.set_light(1, color1)
-
-'''
 
 
 
