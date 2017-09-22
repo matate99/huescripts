@@ -7,6 +7,7 @@ outs = 0
 runs = 0
 calls = 0
 now = datetime.datetime.now()
+print (now.day)
 game = mlbgame.day(now.year, now.month, now.day, home='Brewers', away='Brewers')[0]
 myoverview = mlbgame.overview(game.game_id)
 
@@ -27,7 +28,7 @@ while myoverview.status == 'Preview' or myoverview.status == 'Warmup':
     print(now)
     time.sleep(300)
      
-while myoverview.status == 'In Progress':
+while myoverview.status != 'Final' and calls < 10000:
 
     calls = calls + 1
     myoverview = mlbgame.overview(game.game_id)
