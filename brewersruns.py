@@ -6,7 +6,7 @@ from flashlights import *
 outs = 0
 runs = 0
 calls = 0
-now = datetime.datetime.now()
+now = datetime.datetime.utcnow() - datetime.timedelta(hours=10)
 print (now.day, now.hour)
 game = mlbgame.day(now.year, now.month, now.day, home='Brewers', away='Brewers')[0]
 myoverview = mlbgame.overview(game.game_id)
