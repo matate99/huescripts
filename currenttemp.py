@@ -20,7 +20,7 @@ tempnow = (tempnow**3)*.00002+(tempnow**2)*.0035+tempnow*.4176-5.7344
 x = (tempnow + 10)*.0046087 + .14 #This normalized the high for the gamut conversion
 y = (x**3)*6.055-(x**2)*10.074+x*5.1201-.4264
 color = {'transitiontime' : 1, 'on' : True, 'bri' : 250, 'xy' : [x, y]}
-for y in range (1, 3):
+for y in range (1, 4):
     b.set_light(y, color)
 time.sleep(10)
     
